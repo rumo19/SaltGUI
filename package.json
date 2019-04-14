@@ -97,7 +97,12 @@
     "stylelint": "stylelint 'saltgui/static/stylesheets/*.css'",
     "wait-for-docker": "node tests/helpers/wait-for-docker.js",
     "test:unit": "mocha --require @babel/register --trace-warnings --check-leaks --reporter spec tests/unit/",
+    "test:coverage": "nyc mocha --require @babel/register --trace-warnings --check-leaks --reporter spec tests/unit/",
     "test:functional": "mocha --bail --trace-warnings --check-leaks --reporter spec tests/functional/",
-    "test:coverage": "nyc mocha --require @babel/register --trace-warnings --check-leaks --reporter spec tests/unit/"
+    "babel": "babel saltgui/static/scripts --out-dir saltgui/static/scripts5"
+  },
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
   }
 }

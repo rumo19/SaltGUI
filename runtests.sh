@@ -30,7 +30,13 @@ docker-compose --file docker/docker-compose.yml up --detach
 # wait until all are up
 npm run wait-for-docker
 
+# generate regular JS code from our modularized code
+npm run babel
+
 # run the nightmare.js functional tests
 npm run test:functional
+
+# cleanup the regular JS code again
+rm --recursive saltgui/static/scripts5
 
 set +e
